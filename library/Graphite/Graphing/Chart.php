@@ -141,7 +141,7 @@ class Chart
 
         for (;;) {
             try {
-                $image = $this->graphiteWebClient->request($url, 'POST', $headers);
+                $image = $this->graphiteWebClient->request($url, 'GET', $headers);
             } catch (RuntimeException $e) {
                 if (preg_match('/\b500\b/', $e->getMessage())) {
                     // A 500 Internal Server Error, probably because of
